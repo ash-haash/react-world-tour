@@ -13,7 +13,7 @@ const Countries = () => {
             .then(data => setCountries(data))
     }, [])
 
-    const handleVisitedcountry = country => {
+    const handleVisitedCountry = country => {
         const newVisitedCountries = [...visitedCountries, country];
         setVisitedCountries(newVisitedCountries);
     }
@@ -22,6 +22,9 @@ const Countries = () => {
         const newVisitedFlags = [...visitedFlags, flag];
         setVisitedFlags(newVisitedFlags);
     }
+
+    // remove item from an array in a state
+    // use filter to select all the elements except the one you want to remove
 
     return (
         <div>
@@ -45,7 +48,7 @@ const Countries = () => {
                 {
                     countries.map(country => <Country
                         key={country.cca3}
-                        handleVisitedcountry={handleVisitedcountry}
+                        handleVisitedCountry={handleVisitedCountry}
                         handleVisitedFlags={handleVisitedFlags}
                         country={country}></Country>)
                 }
